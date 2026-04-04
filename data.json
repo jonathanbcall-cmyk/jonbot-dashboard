@@ -1,0 +1,48 @@
+{
+  "generated": "2026-04-04T10:52:00.000000",
+  "costs": {
+    "today": 0,
+    "last_7_days": 205.22,
+    "mtd": 173.43,
+    "total_all_time": 820.49,
+    "daily_breakdown": {
+      "2026-04-04": 0,
+      "2026-04-03": 93.79,
+      "2026-04-02": 46.91,
+      "2026-04-01": 32.73,
+      "2026-03-31": 10.57,
+      "2026-03-30": 21.22
+    }
+  },
+  "projects": {
+    "ben-rust-2026": {
+      "client": "Ben Rust",
+      "description": "Multi-year 1120S reconstruction (2017-2025). Elder law attorney. P&L delivered, awaiting client responses.",
+      "status": "awaiting-client",
+      "awaiting": [
+        "$1,497/month recurring payment identification (probably Lawyers With Purpose)",
+        "Check images or register for 168 checks ($63K)",
+        "Venmo payment clarification (~$15K)"
+      ],
+      "updated": "2026-04-03"
+    },
+    "ops-general": {
+      "client": "CLAW Tax Group",
+      "description": "Internal ops, tooling, and automation for the firm",
+      "status": "active"
+    },
+    "lienequity-fund": {
+      "client": "Jon (Venture)",
+      "description": "RWA tokenization fund — pay off IRS liens for equity stakes in property appreciation",
+      "status": "research"
+    },
+    "bookkeeping-portal": {
+      "client": "CLAW Tax Group",
+      "description": "Employee portal for AI-assisted bookkeeping reconstruction",
+      "status": "planning"
+    }
+  },
+  "liberty": {
+    "latest": null
+  }
+}
