@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-04T10:52:00.000000",
+  "generated": "2026-04-04T11:15:00.000000",
   "costs": {
     "today": 0,
     "last_7_days": 205.22,
@@ -24,25 +24,97 @@
         "Check images or register for 168 checks ($63K)",
         "Venmo payment clarification (~$15K)"
       ],
-      "updated": "2026-04-03"
+      "updated": "2026-04-03",
+      "metrics": {
+        "gross_income": {"value": "$1.87M", "label": "Gross Income (9yr)"},
+        "net_income": {"value": "$1.20M", "label": "Net Income (9yr)"},
+        "categorized": {"value": "89.1%", "label": "Categorized"}
+      },
+      "deliverables": {
+        "P&L Spreadsheet": "https://docs.google.com/spreadsheets/d/10xOmJqOA8y5DBclM-mk87dwpu8DMjZyGGQ04wBXIIVU"
+      },
+      "summary": "Reconstructed 9 years of bookkeeping from bank statements. Elder law S-Corp shows consistent 64% net margins — lean operation with heavy software investment (28% of expenses). 1,030 items ($264K) need client verification before finalizing returns.",
+      "milestones": [
+        "✅ Bank statement extraction complete",
+        "✅ 210 vendor patterns applied",
+        "✅ P&L spreadsheet delivered",
+        "⏳ Awaiting client answers on 3 items",
+        "⏳ Finalize categorization",
+        "⏳ Prepare tax returns"
+      ]
     },
     "ops-general": {
       "client": "CLAW Tax Group",
       "description": "Internal ops, tooling, and automation for the firm",
-      "status": "active"
+      "status": "active",
+      "summary": "Ongoing operational improvements including TaxDome workflows, API integrations, and agentic automation. Current focus: bookkeeping reconstruction skill and employee portal.",
+      "milestones": [
+        "✅ Bookkeeping skill v2.5 complete",
+        "✅ Mission Control dashboard live",
+        "⏳ Employee bookkeeping portal (planning)",
+        "⏳ TaxDome API integrations"
+      ]
     },
     "lienequity-fund": {
       "client": "Jon (Venture)",
       "description": "RWA tokenization fund — pay off IRS liens for equity stakes in property appreciation",
-      "status": "research"
+      "status": "research",
+      "summary": "Novel fund concept targeting $20-25M AUM. Pay off IRS tax liens for homeowners in exchange for equity participation. Jon's EA network = natural deal sourcing moat. 8 failure modes stress-tested; execution risk is primary threat.",
+      "metrics": {
+        "target_aum": {"value": "$20-25M", "label": "Target AUM"},
+        "target_irr": {"value": "15-17%", "label": "Gross IRR"},
+        "breakeven": {"value": "$16M", "label": "Breakeven AUM"}
+      },
+      "milestones": [
+        "✅ Concept development",
+        "✅ Risk analysis (8 scenarios)",
+        "⏳ Legal structure research",
+        "⏳ Tokenization platform selection",
+        "⏳ Pilot deal sourcing"
+      ]
     },
     "bookkeeping-portal": {
       "client": "CLAW Tax Group",
       "description": "Employee portal for AI-assisted bookkeeping reconstruction",
-      "status": "planning"
+      "status": "planning",
+      "summary": "Internal tool for CLAW staff to submit client bank statements and receive AI-processed P&L reconstructions. Leverages bookkeeping-reconstruction skill v2.5.",
+      "milestones": [
+        "✅ Core methodology proven (Ben Rust case)",
+        "✅ Skill documented with 210 patterns",
+        "⏳ Portal UI design",
+        "⏳ Authentication/access control",
+        "⏳ Pilot with internal staff"
+      ]
     }
   },
   "liberty": {
-    "latest": null
+    "last_synced": "2026-04-04T11:15:00.000000",
+    "emails": [
+      {
+        "date": "Thu Apr 2",
+        "subject": "3rd - 5th Grade April Newsletter",
+        "preview": "Please see the attached newsletter highlighting some things that have been going on in the classroom, as well as events to look forward to this month. Enjoy your Easter weekend!"
+      },
+      {
+        "date": "Thu Apr 2",
+        "subject": "3rd Grade Sneak Peek of the Week",
+        "preview": "Happy Thursday! We've had a great week this week! We are continuing on in our studies..."
+      },
+      {
+        "date": "Wed Apr 1",
+        "subject": "April Fools",
+        "preview": "Some of your children asked me to write a CBT for them to prank you. I wanted to give you a heads up in case you wanted to play along and prank them back."
+      },
+      {
+        "date": "Wed Apr 1",
+        "subject": "Weekly e-News at Liberty Classical",
+        "preview": "Parent information meeting for the Summer 2027 Italy Trip is tonight at 7PM. Upper School news and upcoming events."
+      },
+      {
+        "date": "Tue Mar 31",
+        "subject": "Lion Tales: March 2026",
+        "preview": "Spring is in the air (despite the wintry forecast coming our way)! Monthly newsletter with school updates and highlights."
+      }
+    ]
   }
 }

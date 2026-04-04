@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="300"> <!-- Auto-refresh every 5 minutes -->
+    <meta http-equiv="refresh" content="300">
     <title>Jonbot Dashboard</title>
     <style>
         * {
@@ -123,9 +123,18 @@
             color: #4ade80;
         }
         
+        /* Project cards - clickable */
         .project {
-            padding: 16px 0;
+            padding: 16px;
             border-bottom: 1px solid #333;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .project:hover {
+            background: #222;
         }
         
         .project:last-child {
@@ -142,6 +151,19 @@
         .project-name {
             font-weight: 600;
             color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .expand-icon {
+            font-size: 0.8rem;
+            color: #666;
+            transition: transform 0.2s;
+        }
+        
+        .project.expanded .expand-icon {
+            transform: rotate(90deg);
         }
         
         .project-status {
@@ -217,6 +239,82 @@
             color: #fbbf24;
         }
         
+        /* Expandable details */
+        .project-details {
+            display: none;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #333;
+        }
+        
+        .project.expanded .project-details {
+            display: block;
+        }
+        
+        .detail-section {
+            margin-bottom: 16px;
+        }
+        
+        .detail-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .detail-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .detail-content {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
+        
+        .deliverable-link {
+            display: inline-block;
+            background: #1e3a5f;
+            color: #60a5fa;
+            padding: 6px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .deliverable-link:hover {
+            background: #2d4a6f;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        
+        .metric {
+            background: #252525;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #4ade80;
+        }
+        
+        .metric-label {
+            font-size: 0.7rem;
+            color: #888;
+            margin-top: 4px;
+        }
+        
+        /* Liberty section */
         .liberty-section {
             background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%);
             border: 1px solid #2d4a6f;
@@ -238,21 +336,33 @@
             color: #fff;
         }
         
-        .liberty-content {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            line-height: 1.6;
+        .liberty-email {
+            background: rgba(255,255,255,0.05);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
         
-        .liberty-update {
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid #334155;
+        .liberty-email:last-child {
+            margin-bottom: 0;
         }
         
-        .liberty-date {
-            font-size: 0.75rem;
+        .liberty-email-date {
+            font-size: 0.7rem;
             color: #64748b;
+            margin-bottom: 4px;
+        }
+        
+        .liberty-email-subject {
+            font-weight: 500;
+            color: #e2e8f0;
+            margin-bottom: 6px;
+        }
+        
+        .liberty-email-preview {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.4;
         }
         
         .refresh-note {
@@ -295,25 +405,19 @@
                     <div class="cost-label">All-Time</div>
                 </div>
             </div>
-            <div class="daily-breakdown" id="daily-breakdown">
-                <!-- Populated by JS -->
-            </div>
+            <div class="daily-breakdown" id="daily-breakdown"></div>
         </div>
 
         <!-- Projects Awaiting Response -->
         <div class="card">
             <div class="card-title">Projects Awaiting Response</div>
-            <div id="projects-awaiting">
-                <!-- Populated by JS -->
-            </div>
+            <div id="projects-awaiting"></div>
         </div>
 
         <!-- Active Projects -->
         <div class="card">
             <div class="card-title">Active Projects</div>
-            <div id="projects-active">
-                <!-- Populated by JS -->
-            </div>
+            <div id="projects-active"></div>
         </div>
 
         <!-- Liberty Updates -->
@@ -322,16 +426,13 @@
                 <span class="liberty-icon">🏫</span>
                 <span class="liberty-title">Liberty Classical Academy</span>
             </div>
-            <div id="liberty-content">
-                <!-- Populated by JS -->
-            </div>
+            <div id="liberty-content"></div>
         </div>
 
-        <div class="refresh-note">Auto-refreshes every 5 minutes • Pull down to refresh on mobile</div>
+        <div class="refresh-note">Auto-refreshes every 5 minutes • Tap project cards for details</div>
     </div>
 
     <script>
-        // Load data from data.json
         async function loadData() {
             try {
                 const response = await fetch('data.json?' + Date.now());
@@ -351,8 +452,11 @@
             return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
         }
 
+        function toggleProject(el) {
+            el.classList.toggle('expanded');
+        }
+
         function renderDashboard(data) {
-            // Update timestamp
             document.getElementById('last-updated').textContent = 
                 'Updated: ' + new Date(data.generated).toLocaleString();
 
@@ -363,13 +467,10 @@
             document.getElementById('cost-mtd').textContent = formatCurrency(costs.mtd || 0);
             document.getElementById('cost-total').textContent = formatCurrency(costs.total_all_time || 0);
 
-            // Color coding for today's costs
             const todayEl = document.getElementById('cost-today');
-            if (costs.today > 75) {
-                todayEl.classList.add('high');
-            } else if (costs.today > 40) {
-                todayEl.classList.add('warning');
-            }
+            todayEl.className = 'cost-value';
+            if (costs.today > 75) todayEl.classList.add('high');
+            else if (costs.today > 40) todayEl.classList.add('warning');
 
             // Daily breakdown
             const dailyHtml = Object.entries(costs.daily_breakdown || {})
@@ -387,10 +488,15 @@
             const awaitingProjects = Object.entries(data.projects || {})
                 .filter(([_, p]) => p.status === 'awaiting-client' && p.awaiting?.length > 0);
             
-            const awaitingHtml = awaitingProjects.map(([key, p]) => `
-                <div class="project">
+            const awaitingHtml = awaitingProjects.map(([key, p]) => {
+                const detailsHtml = renderProjectDetails(key, p);
+                return `
+                <div class="project" onclick="toggleProject(this)">
                     <div class="project-header">
-                        <span class="project-name">${p.client || key}</span>
+                        <span class="project-name">
+                            <span class="expand-icon">▶</span>
+                            ${p.client || key}
+                        </span>
                         <span class="project-status status-awaiting">Awaiting Client</span>
                     </div>
                     <div class="project-desc">${p.description || ''}</div>
@@ -400,8 +506,9 @@
                             ${p.awaiting.map(item => `<li>${item}</li>`).join('')}
                         </ul>
                     </div>
+                    ${detailsHtml}
                 </div>
-            `).join('');
+            `}).join('');
             
             document.getElementById('projects-awaiting').innerHTML = 
                 awaitingHtml || '<div style="color:#666;padding:16px 0;">No projects awaiting response</div>';
@@ -424,36 +531,103 @@
                 'complete': 'Complete'
             };
             
-            const activeHtml = activeProjects.map(([key, p]) => `
-                <div class="project">
+            const activeHtml = activeProjects.map(([key, p]) => {
+                const detailsHtml = renderProjectDetails(key, p);
+                return `
+                <div class="project" onclick="toggleProject(this)">
                     <div class="project-header">
-                        <span class="project-name">${p.client || key}</span>
+                        <span class="project-name">
+                            <span class="expand-icon">▶</span>
+                            ${p.client || key}
+                        </span>
                         <span class="project-status ${statusClass[p.status] || ''}">${statusLabel[p.status] || p.status}</span>
                     </div>
                     <div class="project-desc">${p.description || ''}</div>
+                    ${detailsHtml}
                 </div>
-            `).join('');
+            `}).join('');
             
             document.getElementById('projects-active').innerHTML = 
                 activeHtml || '<div style="color:#666;padding:16px 0;">No active projects</div>';
 
             // Liberty updates
             const liberty = data.liberty;
-            if (liberty && liberty.latest) {
-                document.getElementById('liberty-content').innerHTML = `
-                    <div class="liberty-content">${liberty.latest.summary || 'No recent updates.'}</div>
-                    <div class="liberty-update">
-                        <div class="liberty-date">Last update: ${liberty.latest.date || 'Unknown'}</div>
+            if (liberty && liberty.emails && liberty.emails.length > 0) {
+                const libertyHtml = liberty.emails.slice(0, 5).map(email => `
+                    <div class="liberty-email">
+                        <div class="liberty-email-date">${email.date}</div>
+                        <div class="liberty-email-subject">${email.subject}</div>
+                        <div class="liberty-email-preview">${email.preview}</div>
                     </div>
-                `;
+                `).join('');
+                document.getElementById('liberty-content').innerHTML = libertyHtml;
             } else {
                 document.getElementById('liberty-content').innerHTML = `
-                    <div class="liberty-content">No Liberty updates synced yet. Updates will appear here when available.</div>
+                    <div style="color:#94a3b8;">No recent Liberty updates.</div>
                 `;
             }
         }
 
-        // Load on page load
+        function renderProjectDetails(key, p) {
+            let html = '<div class="project-details">';
+            
+            // Metrics if available
+            if (p.metrics) {
+                html += `
+                    <div class="detail-section">
+                        <div class="detail-title">Key Metrics</div>
+                        <div class="metrics-grid">
+                            ${Object.entries(p.metrics).map(([k, v]) => `
+                                <div class="metric">
+                                    <div class="metric-value">${v.value}</div>
+                                    <div class="metric-label">${v.label}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Deliverables if available
+            if (p.deliverables && Object.keys(p.deliverables).length > 0) {
+                html += `
+                    <div class="detail-section">
+                        <div class="detail-title">Deliverables</div>
+                        <div>
+                            ${Object.entries(p.deliverables).map(([name, url]) => 
+                                `<a href="${url}" target="_blank" class="deliverable-link">${name.replace(/_/g, ' ')}</a>`
+                            ).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Summary if available
+            if (p.summary) {
+                html += `
+                    <div class="detail-section">
+                        <div class="detail-title">Summary</div>
+                        <div class="detail-content">${p.summary}</div>
+                    </div>
+                `;
+            }
+            
+            // Timeline/milestones if available
+            if (p.milestones && p.milestones.length > 0) {
+                html += `
+                    <div class="detail-section">
+                        <div class="detail-title">Timeline</div>
+                        <div class="detail-content">
+                            ${p.milestones.map(m => `<div style="padding:4px 0;">• ${m}</div>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            html += '</div>';
+            return html;
+        }
+
         loadData();
     </script>
 </body>
