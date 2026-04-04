@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-04T11:15:00.000000",
+  "generated": "2026-04-04T11:25:00.000000",
   "costs": {
     "today": 0,
     "last_7_days": 205.22,
@@ -88,33 +88,8 @@
     }
   },
   "liberty": {
-    "last_synced": "2026-04-04T11:15:00.000000",
-    "emails": [
-      {
-        "date": "Thu Apr 2",
-        "subject": "3rd - 5th Grade April Newsletter",
-        "preview": "Please see the attached newsletter highlighting some things that have been going on in the classroom, as well as events to look forward to this month. Enjoy your Easter weekend!"
-      },
-      {
-        "date": "Thu Apr 2",
-        "subject": "3rd Grade Sneak Peek of the Week",
-        "preview": "Happy Thursday! We've had a great week this week! We are continuing on in our studies..."
-      },
-      {
-        "date": "Wed Apr 1",
-        "subject": "April Fools",
-        "preview": "Some of your children asked me to write a CBT for them to prank you. I wanted to give you a heads up in case you wanted to play along and prank them back."
-      },
-      {
-        "date": "Wed Apr 1",
-        "subject": "Weekly e-News at Liberty Classical",
-        "preview": "Parent information meeting for the Summer 2027 Italy Trip is tonight at 7PM. Upper School news and upcoming events."
-      },
-      {
-        "date": "Tue Mar 31",
-        "subject": "Lion Tales: March 2026",
-        "preview": "Spring is in the air (despite the wintry forecast coming our way)! Monthly newsletter with school updates and highlights."
-      }
-    ]
+    "last_updated": "2026-03-30T12:00:00.000000",
+    "next_update": "Sunday 12:00 PM",
+    "summary": "<strong>ACTION NOW:</strong> Jameson's baseball jersey (#99) needs ordering ASAP, spirit wear closes tomorrow (3/30), and CAA waiver required before practice<br><br><strong>Plant fundraiser</strong> orders due April 2nd<br><br><strong>Sullivan's class:</strong> Entering Q4, testing practice next week, full testing the week after<br><br><strong>Basketball:</strong> Lions made school history at state tournament, played consolation final yesterday<br><br><strong>Scholarships:</strong> Two merit-based options opening for upper school (April/May deadlines)"
   }
 }

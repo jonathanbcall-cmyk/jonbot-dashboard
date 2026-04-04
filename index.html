@@ -425,6 +425,7 @@
             <div class="liberty-header">
                 <span class="liberty-icon">🏫</span>
                 <span class="liberty-title">Liberty Classical Academy</span>
+                <span id="liberty-next" style="margin-left:auto;font-size:0.75rem;color:#64748b;"></span>
             </div>
             <div id="liberty-content"></div>
         </div>
@@ -550,21 +551,27 @@
             document.getElementById('projects-active').innerHTML = 
                 activeHtml || '<div style="color:#666;padding:16px 0;">No active projects</div>';
 
-            // Liberty updates
+            // Liberty updates - shows the same summary sent via email (Sun 12PM / Wed 5PM)
             const liberty = data.liberty;
-            if (liberty && liberty.emails && liberty.emails.length > 0) {
-                const libertyHtml = liberty.emails.slice(0, 5).map(email => `
-                    <div class="liberty-email">
-                        <div class="liberty-email-date">${email.date}</div>
-                        <div class="liberty-email-subject">${email.subject}</div>
-                        <div class="liberty-email-preview">${email.preview}</div>
-                    </div>
-                `).join('');
-                document.getElementById('liberty-content').innerHTML = libertyHtml;
-            } else {
-                document.getElementById('liberty-content').innerHTML = `
-                    <div style="color:#94a3b8;">No recent Liberty updates.</div>
-                `;
+            if (liberty) {
+                // Show next update time
+                if (liberty.next_update) {
+                    document.getElementById('liberty-next').textContent = `Next: ${liberty.next_update}`;
+                }
+                
+                // Show summary if available
+                if (liberty.summary) {
+                    document.getElementById('liberty-content').innerHTML = `
+                        <div class="liberty-summary">${liberty.summary}</div>
+                        <div style="font-size:0.75rem;color:#64748b;margin-top:12px;">
+                            Last updated: ${liberty.last_updated ? new Date(liberty.last_updated).toLocaleDateString() : 'Unknown'}
+                        </div>
+                    `;
+                } else {
+                    document.getElementById('liberty-content').innerHTML = `
+                        <div style="color:#94a3b8;">No summary yet. Updates sent Sun 12PM & Wed 5PM.</div>
+                    `;
+                }
             }
         }
 
