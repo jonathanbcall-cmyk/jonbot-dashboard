@@ -1,95 +1,141 @@
 {
-  "generated": "2026-04-04T11:25:00.000000",
+  "generated": "2026-04-05T12:01:41.296162",
   "costs": {
     "today": 0,
-    "last_7_days": 205.22,
-    "mtd": 173.43,
-    "total_all_time": 820.49,
-    "daily_breakdown": {
-      "2026-04-04": 0,
-      "2026-04-03": 93.79,
-      "2026-04-02": 46.91,
-      "2026-04-01": 32.73,
-      "2026-03-31": 10.57,
-      "2026-03-30": 21.22
-    }
+    "last_7_days": 0,
+    "mtd": 0,
+    "total_all_time": 0,
+    "daily_breakdown": {}
   },
   "projects": {
     "ben-rust-2026": {
       "client": "Ben Rust",
-      "description": "Multi-year 1120S reconstruction (2017-2025). Elder law attorney. P&L delivered, awaiting client responses.",
+      "description": "Multi-year 1120S reconstruction from bank statements (2017-2025). Elder law attorney, S-Corp.",
+      "created": "2026-03-02T21:15:21.611183",
       "status": "awaiting-client",
+      "category": "biz",
+      "budget": 100.0,
+      "spent_estimate": 94.15,
+      "tags": [
+        "tax-resolution",
+        "bookkeeping",
+        "reconstruction"
+      ],
+      "deliverables": {
+        "pl_spreadsheet": "https://docs.google.com/spreadsheets/d/10xOmJqOA8y5DBclM-mk87dwpu8DMjZyGGQ04wBXIIVU",
+        "analysis_report": "projects/ben-rust-2026/output/BEN_RUST_ANALYSIS_REPORT.md"
+      },
+      "results": {
+        "gross_receipts": 1865722,
+        "expenses": 667828,
+        "net_income": 1197893,
+        "categorization_rate": 89.1,
+        "review_items": 1030
+      },
       "awaiting": [
-        "$1,497/month recurring payment identification (probably Lawyers With Purpose)",
-        "Check images or register for 168 checks ($63K)",
+        "$1,497/month recurring payment identification",
+        "Check images or register (168 checks, $63K)",
         "Venmo payment clarification (~$15K)"
       ],
-      "updated": "2026-04-03",
-      "metrics": {
-        "gross_income": {"value": "$1.87M", "label": "Gross Income (9yr)"},
-        "net_income": {"value": "$1.20M", "label": "Net Income (9yr)"},
-        "categorized": {"value": "89.1%", "label": "Categorized"}
-      },
-      "deliverables": {
-        "P&L Spreadsheet": "https://docs.google.com/spreadsheets/d/10xOmJqOA8y5DBclM-mk87dwpu8DMjZyGGQ04wBXIIVU"
-      },
-      "summary": "Reconstructed 9 years of bookkeeping from bank statements. Elder law S-Corp shows consistent 64% net margins — lean operation with heavy software investment (28% of expenses). 1,030 items ($264K) need client verification before finalizing returns.",
-      "milestones": [
-        "✅ Bank statement extraction complete",
-        "✅ 210 vendor patterns applied",
-        "✅ P&L spreadsheet delivered",
-        "⏳ Awaiting client answers on 3 items",
-        "⏳ Finalize categorization",
-        "⏳ Prepare tax returns"
-      ]
+      "updated": "2026-04-03T17:00:00.000000"
     },
     "ops-general": {
       "client": "CLAW Tax Group",
       "description": "Internal ops, tooling, and automation for the firm",
+      "created": "2026-03-03T18:50:00.000000",
       "status": "active",
-      "summary": "Ongoing operational improvements including TaxDome workflows, API integrations, and agentic automation. Current focus: bookkeeping reconstruction skill and employee portal.",
-      "milestones": [
-        "✅ Bookkeeping skill v2.5 complete",
-        "✅ Mission Control dashboard live",
-        "⏳ Employee bookkeeping portal (planning)",
-        "⏳ TaxDome API integrations"
+      "category": "biz",
+      "budget": 50.0,
+      "tags": [
+        "operations",
+        "internal",
+        "tooling"
+      ]
+    },
+    "personal-general": {
+      "client": "Jon",
+      "description": "Personal projects, research, and misc tasks",
+      "created": "2026-03-03T18:57:00.000000",
+      "status": "active",
+      "category": "personal",
+      "budget": 50.0,
+      "tags": [
+        "personal",
+        "misc"
       ]
     },
     "lienequity-fund": {
       "client": "Jon (Venture)",
-      "description": "RWA tokenization fund — pay off IRS liens for equity stakes in property appreciation",
+      "description": "RWA tokenization fund concept - pay off IRS tax liens for homeowners in exchange for equity participation in property appreciation",
+      "created": "2026-02-01T00:00:00.000000",
       "status": "research",
-      "summary": "Novel fund concept targeting $20-25M AUM. Pay off IRS tax liens for homeowners in exchange for equity participation. Jon's EA network = natural deal sourcing moat. 8 failure modes stress-tested; execution risk is primary threat.",
-      "metrics": {
-        "target_aum": {"value": "$20-25M", "label": "Target AUM"},
-        "target_irr": {"value": "15-17%", "label": "Gross IRR"},
-        "breakeven": {"value": "$16M", "label": "Breakeven AUM"}
-      },
-      "milestones": [
-        "✅ Concept development",
-        "✅ Risk analysis (8 scenarios)",
-        "⏳ Legal structure research",
-        "⏳ Tokenization platform selection",
-        "⏳ Pilot deal sourcing"
-      ]
+      "category": "ventures",
+      "budget": 25.0,
+      "tags": [
+        "rwa",
+        "tokenization",
+        "tax-liens",
+        "real-estate",
+        "fund",
+        "venture"
+      ],
+      "files": "projects/lienequity-fund/",
+      "notes": "Recovered from NotebookLM export 2026-03-03. Strong fit with CLAW's EA network as deal sourcing moat."
+    },
+    "api-cost-tracker": {
+      "client": "CLAW Tax Group",
+      "description": "Track actual Anthropic API costs from Gmail receipts. Auto-syncs from jonathanbcall@gmail.com.",
+      "created": "2026-03-25T16:45:00.000000",
+      "status": "active",
+      "category": "biz",
+      "budget": 0,
+      "tags": [
+        "operations",
+        "tooling",
+        "costs",
+        "monitoring"
+      ],
+      "files": "mission-control/anthropic_costs.json",
+      "sync_script": "mission-control/sync_anthropic_costs.py",
+      "updated": "2026-04-03T17:15:00.000000"
+    },
+    "bookkeeping-skill": {
+      "client": "CLAW Tax Group",
+      "description": "Bookkeeping reconstruction skill v2.5. 210 vendor patterns, IRS SOI benchmarking, industry-specific rules (legal, medical, trades). Hard gates for quality control.",
+      "created": "2026-04-02T00:00:00.000000",
+      "status": "complete",
+      "category": "biz",
+      "budget": 0,
+      "tags": [
+        "skill",
+        "bookkeeping",
+        "methodology"
+      ],
+      "files": "skills/bookkeeping-reconstruction/",
+      "version": "2.5-final",
+      "patterns_count": 210,
+      "updated": "2026-04-03T17:00:00.000000"
     },
     "bookkeeping-portal": {
       "client": "CLAW Tax Group",
-      "description": "Employee portal for AI-assisted bookkeeping reconstruction",
+      "description": "Employee portal/app for AI-assisted bookkeeping reconstruction. Staff submit client folders, AI processes using standardized methodology.",
+      "created": "2026-03-25T16:30:00.000000",
       "status": "planning",
-      "summary": "Internal tool for CLAW staff to submit client bank statements and receive AI-processed P&L reconstructions. Leverages bookkeeping-reconstruction skill v2.5.",
-      "milestones": [
-        "✅ Core methodology proven (Ben Rust case)",
-        "✅ Skill documented with 210 patterns",
-        "⏳ Portal UI design",
-        "⏳ Authentication/access control",
-        "⏳ Pilot with internal staff"
-      ]
+      "category": "biz",
+      "budget": 75.0,
+      "tags": [
+        "operations",
+        "tooling",
+        "bookkeeping",
+        "reconstruction",
+        "ai-assisted"
+      ],
+      "notes": "Now have working skill (v2.5). Next: build employee-facing interface."
     }
   },
   "liberty": {
-    "last_updated": "2026-03-30T12:00:00.000000",
-    "next_update": "Sunday 12:00 PM",
-    "summary": "<strong>ACTION NOW:</strong> Jameson's baseball jersey (#99) needs ordering ASAP, spirit wear closes tomorrow (3/30), and CAA waiver required before practice<br><br><strong>Plant fundraiser</strong> orders due April 2nd<br><br><strong>Sullivan's class:</strong> Entering Q4, testing practice next week, full testing the week after<br><br><strong>Basketball:</strong> Lions made school history at state tournament, played consolation final yesterday<br><br><strong>Scholarships:</strong> Two merit-based options opening for upper school (April/May deadlines)"
+    "last_updated": "2026-04-05T12:00:00-05:00",
+    "next_update": "Wednesday 5:00 PM",
+    "summary": "<strong>ACTION ITEMS</strong><br>\u00e2\u20ac\u00a2 STANDARDIZED TESTING THIS WEEK (April 7-11): No school-provided snacks. Send kids with breakfast and a snack.<br>\u00e2\u20ac\u00a2 4TH QUARTER BOOKS: Kids should pick and start their challenge book ASAP<br>\u00e2\u20ac\u00a2 HOMEWORK CHECK-IN: Q4 is busy - check in regularly. Incomplete work shows as zeros.<br>\u00e2\u20ac\u00a2 LUNCH INVOICE: $77.60 due April 15th (auto-pay set)<br><br><strong>TEACHER NOTES</strong><br>\u00e2\u20ac\u00a2 <em>Sullivan (3rd):</em> Continuing periodic elements unit, learning element song, finished literature book<br>\u00e2\u20ac\u00a2 <em>Jameson (5th):</em> April Fools CBT prank fun<br><br><strong>UPCOMING</strong><br>\u00e2\u20ac\u00a2 Apr 4: Jameson baseball practice @ LCA, 10am-12pm<br>\u00e2\u20ac\u00a2 Apr 7-11: Standardized Testing Week<br>\u00e2\u20ac\u00a2 Apr 25: Youth Fellowship Night @ WBL, 6-8PM<br>\u00e2\u20ac\u00a2 Apr 30: K-12 Art Show, 6-8PM<br><br><strong>HIGHLIGHTS</strong><br>\u00e2\u20ac\u00a2 Boys basketball won Consolation Championship at State (5th place Class A) - first state tournament in Liberty history!<br>\u00e2\u20ac\u00a2 Sullivan's flag football team roster set - games Saturdays at Stillwater HS"
   }
 }
