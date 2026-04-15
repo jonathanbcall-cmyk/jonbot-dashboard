@@ -1,11 +1,12 @@
 {
-  "generated": "2026-04-14T18:01:18.456983",
+  "generated": "2026-04-15T18:02:23.630495",
   "costs": {
-    "today": 0,
-    "last_7_days": 206.17,
-    "mtd": 401.22,
-    "total_all_time": 1048.28,
+    "today": 10.18,
+    "last_7_days": 206.14,
+    "mtd": 411.4,
+    "total_all_time": 1058.46,
     "daily_breakdown": {
+      "2026-04-15": 10.18,
       "2026-04-13": 10.83,
       "2026-04-12": 20.9,
       "2026-04-10": 42.99,
@@ -184,8 +185,8 @@
     }
   },
   "liberty": {
-    "last_updated": "2026-04-12T17:00:00Z",
-    "next_update": "Wednesday 5:00 PM",
-    "summary": "<strong>ACTION ITEMS</strong><br>\u00e2\u20ac\u00a2 <strong>Scarecrow Costume Needed:</strong> Musical performance requires black pants and black/brown/gray shoes. Face paint will be used - notify Ms. Lanz if allergies.<br>\u00e2\u20ac\u00a2 <strong>Boys Basketball Clinic Today:</strong> Senior class fundraiser at WBL Campus Gym. K-4: 9-10:30AM, 5-8: 10:30AM-12PM.<br><br><strong>UPCOMING EVENTS</strong><br>\u00e2\u20ac\u00a2 Apr 13: 6th Grade Baseball @ St. Bridget River Falls, 4PM<br>\u00e2\u20ac\u00a2 Apr 16: 6th Grade Baseball @ St. Thomas More, 4PM<br>\u00e2\u20ac\u00a2 Apr 18: Flag Football vs Beast Mode @ Stillwater HS, 12:15PM<br>\u00e2\u20ac\u00a2 Apr 25: Flag Football vs Endzone Enforcers @ Stillwater HS, 12:15PM<br>\u00e2\u20ac\u00a2 Apr 25: Youth Fellowship Night @ WBL, 6-8PM (7th-12th grade)<br>\u00e2\u20ac\u00a2 Apr 30: K-12 Art Show @ WBL, 6-8PM<br><br><strong>SPORTS</strong><br>\u00e2\u20ac\u00a2 Flag football games start Apr 18 at Stillwater HS (Saturdays 12:15PM)<br>\u00e2\u20ac\u00a2 Baseball home field: Babe Ruth Fields, 1705 9th St, WBL"
+    "last_updated": "2026-04-15T17:00:00-05:00",
+    "next_update": "Sunday 12:00 PM",
+    "summary": "<strong>ACTION ITEMS</strong><br><br>1. <strong>State Capitol Field Trip (Jameson)</strong> - Permission form was DUE Apr 13<br>&nbsp;&nbsp;&nbsp;Link: forms.gle/FcTGYLxAVzfbqoxk9 | Trip: May 4<br>&nbsp;&nbsp;&nbsp;<em>STATUS: Verify submitted!</em><br><br>2. <strong>Flag Football Background Check</strong> - Kelly/Jon<br>&nbsp;&nbsp;&nbsp;Login: portal.gridironfb.com<br>&nbsp;&nbsp;&nbsp;<em>STATUS: Overdue - complete ASAP</em><br><br><strong>UPCOMING EVENTS</strong><br><br>\u00e2\u20ac\u00a2 Apr 23: 4th Grade Drama (6 PM)<br>\u00e2\u20ac\u00a2 Apr 24: 3rd Grade Drama - Sullivan (6 PM)<br>\u00e2\u20ac\u00a2 Apr 25: Youth Fellowship Night (6-8 PM)<br>\u00e2\u20ac\u00a2 Apr 28: Choir & Band Concert<br>\u00e2\u20ac\u00a2 Apr 30: K-12 Art Show (6-8 PM) + Food Trucks<br>\u00e2\u20ac\u00a2 May 1: Grandparents Day<br>\u00e2\u20ac\u00a2 May 4: State Capitol Trip (Jameson)<br><br><strong>ALERTS</strong><br><br>\u00e2\u20ac\u00a2 Summer Camp needs 2-3 more signups to be viable!<br>\u00e2\u20ac\u00a2 Summer Baseball registration open (Liberty + WBBA)"
   }
 }
