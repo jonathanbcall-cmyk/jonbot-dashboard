@@ -87,6 +87,12 @@
         "operations",
         "internal",
         "tooling"
+      ],
+      "summary": "<em>Suggested:</em> TaxDome workflow automation, RingCentral API integration, lead tracking, internal tooling improvements.",
+      "milestones": [
+        "<em>Suggested:</em> Automate intake-to-engagement pipeline",
+        "<em>Suggested:</em> Build client communication templates",
+        "<em>Suggested:</em> Dashboard metrics for case load"
       ]
     },
     "personal-general": {
@@ -99,6 +105,12 @@
       "tags": [
         "personal",
         "misc"
+      ],
+      "summary": "<em>Suggested:</em> Relocation research, digital legacy/voice cloning, 3D printing projects, trading analysis.",
+      "milestones": [
+        "<em>Suggested:</em> Complete KY/TN tax comparison",
+        "<em>Suggested:</em> Voice clone baseline recording",
+        "<em>Suggested:</em> Maker lab ROI tracking setup"
       ]
     },
     "lienequity-fund": {
@@ -117,7 +129,13 @@
         "venture"
       ],
       "files": "projects/lienequity-fund/",
-      "notes": "Recovered from NotebookLM export 2026-03-03. Strong fit with CLAW's EA network as deal sourcing moat."
+      "notes": "Recovered from NotebookLM export 2026-03-03. Strong fit with CLAW's EA network as deal sourcing moat.",
+      "summary": "<em>Suggested:</em> Target $20-25M AUM, 15-17% gross IRR. EA network = deal sourcing moat. 8-12 deals/year at ~$50K avg lien.",
+      "milestones": [
+        "<em>Suggested:</em> Legal structure review (fund vs SPV)",
+        "<em>Suggested:</em> Tokenization platform selection",
+        "<em>Suggested:</em> Pilot deal sourcing (3-5 candidates)"
+      ]
     },
     "api-cost-tracker": {
       "client": "CLAW Tax Group",
@@ -134,7 +152,13 @@
       ],
       "files": "mission-control/anthropic_costs.json",
       "sync_script": "mission-control/sync_anthropic_costs.py",
-      "updated": "2026-04-03T17:15:00.000000"
+      "updated": "2026-04-03T17:15:00.000000",
+      "metrics": {
+        "mtd": { "value": "$422", "label": "April MTD" },
+        "alltime": { "value": "$1,069", "label": "All-Time" },
+        "avg": { "value": "$15/day", "label": "7-Day Avg" }
+      },
+      "summary": "Auto-extracts costs from Anthropic receipt emails. Powers dashboard cost cards."
     },
     "bookkeeping-skill": {
       "client": "CLAW Tax Group",
@@ -167,7 +191,13 @@
         "reconstruction",
         "ai-assisted"
       ],
-      "notes": "Now have working skill (v2.5). Next: build employee-facing interface."
+      "notes": "Now have working skill (v2.5). Next: build employee-facing interface.",
+      "summary": "<em>Suggested:</em> Employee-facing portal for AI-assisted bookkeeping. Upload statements → AI categorizes → human review → export.",
+      "milestones": [
+        "<em>Suggested:</em> Define intake form fields",
+        "<em>Suggested:</em> Build upload + processing pipeline",
+        "<em>Suggested:</em> Review/approval workflow UI"
+      ]
     },
     "financial-legal-framework": {
       "client": "CLAW Tax Group",
@@ -182,7 +212,13 @@
         "structure",
         "matt-wildes"
       ],
-      "notes": "Added 2026-04-08. Follow up Friday."
+      "notes": "Added 2026-04-08. Follow up Friday.",
+      "summary": "<em>Suggested:</em> Entity structure cleanup, operating agreements, financial controls, separation of duties.",
+      "milestones": [
+        "<em>Suggested:</em> Initial meeting with Matt",
+        "<em>Suggested:</em> Document current entity structure",
+        "<em>Suggested:</em> Identify gaps + remediation plan"
+      ]
     }
   },
   "liberty": {
