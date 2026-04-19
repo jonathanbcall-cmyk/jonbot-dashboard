@@ -1,11 +1,12 @@
 {
-  "generated": "2026-04-18T18:01:41.405245",
+  "generated": "2026-04-19T18:03:09.339281",
   "costs": {
-    "today": 0,
-    "last_7_days": 52.25,
-    "mtd": 421.74,
-    "total_all_time": 1068.8,
+    "today": 20.45,
+    "last_7_days": 72.7,
+    "mtd": 442.19,
+    "total_all_time": 1089.25,
     "daily_breakdown": {
+      "2026-04-19": 20.45,
       "2026-04-17": 10.34,
       "2026-04-15": 10.18,
       "2026-04-13": 10.83,
@@ -87,12 +88,6 @@
         "operations",
         "internal",
         "tooling"
-      ],
-      "summary": "<em>Suggested:</em> TaxDome workflow automation, RingCentral API integration, lead tracking, internal tooling improvements.",
-      "milestones": [
-        "<em>Suggested:</em> Automate intake-to-engagement pipeline",
-        "<em>Suggested:</em> Build client communication templates",
-        "<em>Suggested:</em> Dashboard metrics for case load"
       ]
     },
     "personal-general": {
@@ -105,12 +100,6 @@
       "tags": [
         "personal",
         "misc"
-      ],
-      "summary": "<em>Suggested:</em> Relocation research, digital legacy/voice cloning, 3D printing projects, trading analysis.",
-      "milestones": [
-        "<em>Suggested:</em> Complete KY/TN tax comparison",
-        "<em>Suggested:</em> Voice clone baseline recording",
-        "<em>Suggested:</em> Maker lab ROI tracking setup"
       ]
     },
     "lienequity-fund": {
@@ -129,13 +118,7 @@
         "venture"
       ],
       "files": "projects/lienequity-fund/",
-      "notes": "Recovered from NotebookLM export 2026-03-03. Strong fit with CLAW's EA network as deal sourcing moat.",
-      "summary": "<em>Suggested:</em> Target $20-25M AUM, 15-17% gross IRR. EA network = deal sourcing moat. 8-12 deals/year at ~$50K avg lien.",
-      "milestones": [
-        "<em>Suggested:</em> Legal structure review (fund vs SPV)",
-        "<em>Suggested:</em> Tokenization platform selection",
-        "<em>Suggested:</em> Pilot deal sourcing (3-5 candidates)"
-      ]
+      "notes": "Recovered from NotebookLM export 2026-03-03. Strong fit with CLAW's EA network as deal sourcing moat."
     },
     "api-cost-tracker": {
       "client": "CLAW Tax Group",
@@ -152,13 +135,7 @@
       ],
       "files": "mission-control/anthropic_costs.json",
       "sync_script": "mission-control/sync_anthropic_costs.py",
-      "updated": "2026-04-03T17:15:00.000000",
-      "metrics": {
-        "mtd": { "value": "$422", "label": "April MTD" },
-        "alltime": { "value": "$1,069", "label": "All-Time" },
-        "avg": { "value": "$15/day", "label": "7-Day Avg" }
-      },
-      "summary": "Auto-extracts costs from Anthropic receipt emails. Powers dashboard cost cards."
+      "updated": "2026-04-03T17:15:00.000000"
     },
     "bookkeeping-skill": {
       "client": "CLAW Tax Group",
@@ -191,13 +168,7 @@
         "reconstruction",
         "ai-assisted"
       ],
-      "notes": "Now have working skill (v2.5). Next: build employee-facing interface.",
-      "summary": "<em>Suggested:</em> Employee-facing portal for AI-assisted bookkeeping. Upload statements → AI categorizes → human review → export.",
-      "milestones": [
-        "<em>Suggested:</em> Define intake form fields",
-        "<em>Suggested:</em> Build upload + processing pipeline",
-        "<em>Suggested:</em> Review/approval workflow UI"
-      ]
+      "notes": "Now have working skill (v2.5). Next: build employee-facing interface."
     },
     "financial-legal-framework": {
       "client": "CLAW Tax Group",
@@ -212,18 +183,12 @@
         "structure",
         "matt-wildes"
       ],
-      "notes": "Added 2026-04-08. Follow up Friday.",
-      "summary": "<em>Suggested:</em> Entity structure cleanup, operating agreements, financial controls, separation of duties.",
-      "milestones": [
-        "<em>Suggested:</em> Initial meeting with Matt",
-        "<em>Suggested:</em> Document current entity structure",
-        "<em>Suggested:</em> Identify gaps + remediation plan"
-      ]
+      "notes": "Added 2026-04-08. Follow up Friday."
     }
   },
   "liberty": {
-    "last_updated": "2026-04-15T17:00:00-05:00",
-    "next_update": "Sunday 12:00 PM",
-    "summary": "<strong>ACTION ITEMS</strong><br><br>1. <strong>State Capitol Field Trip (Jameson)</strong> - Permission form was DUE Apr 13<br>&nbsp;&nbsp;&nbsp;Link: forms.gle/FcTGYLxAVzfbqoxk9 | Trip: May 4<br>&nbsp;&nbsp;&nbsp;<em>STATUS: Verify submitted!</em><br><br>2. <strong>Flag Football Background Check</strong> - Kelly/Jon<br>&nbsp;&nbsp;&nbsp;Login: portal.gridironfb.com<br>&nbsp;&nbsp;&nbsp;<em>STATUS: Overdue - complete ASAP</em><br><br><strong>UPCOMING EVENTS</strong><br><br>\u00e2\u20ac\u00a2 Apr 23: 4th Grade Drama (6 PM)<br>\u00e2\u20ac\u00a2 Apr 24: 3rd Grade Drama - Sullivan (6 PM)<br>\u00e2\u20ac\u00a2 Apr 25: Youth Fellowship Night (6-8 PM)<br>\u00e2\u20ac\u00a2 Apr 28: Choir & Band Concert<br>\u00e2\u20ac\u00a2 Apr 30: K-12 Art Show (6-8 PM) + Food Trucks<br>\u00e2\u20ac\u00a2 May 1: Grandparents Day<br>\u00e2\u20ac\u00a2 May 4: State Capitol Trip (Jameson)<br><br><strong>ALERTS</strong><br><br>\u00e2\u20ac\u00a2 Summer Camp needs 2-3 more signups to be viable!<br>\u00e2\u20ac\u00a2 Summer Baseball registration open (Liberty + WBBA)"
+    "last_updated": "2026-04-19T17:00:00Z",
+    "next_update": "Wednesday 5:00 PM",
+    "summary": "<strong>ACTION ITEMS</strong><br><br>\u00e2\u20ac\u00a2 <strong>MAY LUNCH ORDERS</strong> - Due Friday, April 24th by midnight<br>\u00e2\u20ac\u00a2 <strong>GRANDPARENTS DAY RSVP</strong> - Check if invites went through (deadline was April 16)<br>\u00e2\u20ac\u00a2 <strong>BASEBALL REGISTRATION</strong> - Last call for 3rd/4th & 5th/6th grade Liberty teams<br>\u00e2\u20ac\u00a2 <strong>WIZARD OF OZ VOLUNTEERS</strong> - 3rd/4th grade performances NEXT WEEK - help needed!<br><br><strong>TEACHER NOTES (Jameson - 5th Grade)</strong><br><br>Mrs. Thompson: Two projects underway:<br>1. <strong>Call it Courage Diorama</strong> - Present Mon 4/27 & Grandparents Day 5/1<br>2. <strong>Chronological Quest</strong> - Poster due 5/18, costume for Human Timeline 5/22<br><br><strong>UPCOMING EVENTS</strong><br><br>\u00e2\u20ac\u00a2 Sat 4/25: Youth Fellowship Night (7th-12th)<br>\u00e2\u20ac\u00a2 Thu 4/30: K-12 Art Show + Food Trucks<br>\u00e2\u20ac\u00a2 Fri 5/1: Grandparents Day<br>\u00e2\u20ac\u00a2 Fri 5/22: Human Timeline (costume day)"
   }
 }
