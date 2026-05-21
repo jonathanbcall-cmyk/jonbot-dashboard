@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mission Control — Jon Call</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', system-ui, sans-serif; 
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #e4e4e4; 
+      padding: 20px;
+      min-height: 100vh;
+    }
+    h1 { 
+      font-size: 32px; 
+      margin-bottom: 5px; 
+      color: #00d4ff;
+      text-shadow: 0 0 20px rgba(0,212,255,0.3);
+    }
+    .subtitle { color: #666; margin-bottom: 25px; }
+    .section { margin-bottom: 30px; }
+    .section-title {
+      font-size: 18px;
+      color: #ffd700;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(255,215,0,0.3);
+    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+    .card { 
+      background: rgba(255,255,255,0.05); 
+      border-radius: 12px; 
+      padding: 20px; 
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .card.business { border-left: 4px solid #00d4ff; }
+    .card.personal { border-left: 4px solid #00ff88; }
+    .card.parked { border-left: 4px solid #888; opacity: 0.7; }
+    .card.active { border-left: 4px solid #ffd700; }
+    .card h3 { 
+      font-size: 16px; 
+      color: #fff; 
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card p { font-size: 13px; color: #aaa; line-height: 1.5; margin-bottom: 10px; }
+    .stat { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; }
+    .stat:last-child { border-bottom: none; }
+    .stat .label { color: #888; }
+    .stat .value { font-weight: 600; color: #fff; }
+    .stat .value.green { color: #00ff88; }
+    .stat .value.blue { color: #00d4ff; }
+    .stat .value.yellow { color: #ffd700; }
+    .stat .value.red { color: #ff6b6b; }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge.running { background: rgba(0,212,255,0.2); color: #00d4ff; }
+    .badge.complete { background: rgba(0,255,136,0.2); color: #00ff88; }
+    .badge.research { background: rgba(255,215,0,0.2); color: #ffd700; }
+    .badge.parked { background: rgba(136,136,136,0.2); color: #888; }
+    .badge.blocked { background: rgba(255,107,107,0.2); color: #ff6b6b; }
+    .progress-bar { 
+      height: 6px; 
+      background: rgba(255,255,255,0.1); 
+      border-radius: 3px; 
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, #00d4ff, #00ff88);
+      border-radius: 3px;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+    .parking-item {
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .parking-item h4 { font-size: 14px; color: #ccc; margin-bottom: 5px; }
+    .parking-item p { font-size: 12px; color: #777; margin: 0; }
+  </style>
+</head>
+<body>
+  <h1>🎛️ Mission Control</h1>
+  <p class="subtitle">Sat Mar 7, 2026 — 4:56 PM CST</p>
+
+  <!-- ACTIVE TASKS -->
+  <div class="section">
+    <div class="section-title">🔥 Active Right Now</div>
+    <div class="grid">
+      <div class="card active">
+        <h3>File Reorg — Full Batch <span class="badge running">Running</span></h3>
+        <p>Google Vision OCR + MFJ consolidation on all remaining subfolders.</p>
+        <div class="stat"><span class="label">Total Files</span><span class="value blue">91,856</span></div>
+        <div class="stat"><span class="label">Folders</span><span class="value">4,308</span></div>
+        <div class="stat"><span class="label">Currently</span><span class="value yellow">OIC (5,351 files)</span></div>
+        <div class="stat"><span class="label">OCR Engine</span><span class="value green">Google Vision</span></div>
+        <div class="stat"><span class="label">Mode</span><span class="value green">Auto-Execute</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 5%"></div></div>
+      </div>
+      <div class="card active">
+        <h3>RingCentral SMS Integration <span class="badge blocked">Blocked</span></h3>
+        <p>SMS history database for TaxDome. Waiting on RC API access.</p>
+        <div class="stat"><span class="label">Status</span><span class="value yellow">Awaiting RC support</span></div>
+        <div class="stat"><span class="label">Architecture</span><span class="value green">Designed ✓</span></div>
+        <div class="stat"><span class="label">Stack</span><span class="value">Cloudflare Workers + D1</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- BUSINESS PROJECTS -->
+    <div class="section">
+      <div class="section-title">💼 Business Projects</div>
+      
+      <div class="card business">
+        <h3>File Reorg (G-Drive Cleanup) <span class="badge running">Phase 4</span></h3>
+        <p>Organizing 100K+ legacy client PDFs from G-Drive into client folders.</p>
+        <div class="stat"><span class="label">Phase 1 (filename)</span><span class="value green">✓ Complete</span></div>
+        <div class="stat"><span class="label">Phase 2 (pdfplumber)</span><span class="value green">✓ Complete</span></div>
+        <div class="stat"><span class="label">Phase 3 (Tesseract)</span><span class="value green">✓ Complete</span></div>
+        <div class="stat"><span class="label">Phase 4 (Google Vision)</span><span class="value yellow">Running...</span></div>
+        <div class="stat"><span class="label">Client Folders</span><span class="value">5,297+</span></div>
+        <div class="stat"><span class="label">Test Accuracy</span><span class="value green">70%</span></div>
+      </div>
+
+      <div class="card business" style="margin-top: 15px;">
+        <h3>Ben Rust Bookkeeping <span class="badge complete">Complete</span></h3>
+        <p>Multi-year tax reconstruction (2017-2025) from Wells Fargo statements.</p>
+        <div class="stat"><span class="label">Pipeline</span><span class="value green">Built ✓</span></div>
+        <div class="stat"><span class="label">Income Fix</span><span class="value green">Applied ✓</span></div>
+        <div class="stat"><span class="label">2024 Gross</span><span class="value blue">$250K</span></div>
+        <div class="stat"><span class="label">Status</span><span class="value green">Ready for review</span></div>
+      </div>
+
+      <div class="card business" style="margin-top: 15px;">
+        <h3>LienEquity Fund <span class="badge research">Research</span></h3>
+        <p>RWA tokenization — pay off IRS liens for equity stakes in property appreciation.</p>
+        <div class="stat"><span class="label">Business Plan</span><span class="value green">Complete ✓</span></div>
+        <div class="stat"><span class="label">Financial Model</span><span class="value green">Complete ✓</span></div>
+        <div class="stat"><span class="label">Risk Analysis</span><span class="value green">Complete ✓</span></div>
+        <div class="stat"><span class="label">Target AUM</span><span class="value">$20-25M</span></div>
+        <div class="stat"><span class="label">Status</span><span class="value yellow">Concept stage</span></div>
+      </div>
+
+      <div class="card business" style="margin-top: 15px;">
+        <h3>Guderian Case <span class="badge complete">Organized</span></h3>
+        <p>Multi-year unfiled returns (2018-2024). Tim & Michelle Guderian.</p>
+        <div class="stat"><span class="label">Folder</span><span class="value green">Desktop ✓</span></div>
+        <div class="stat"><span class="label">Summary</span><span class="value green">Complete ✓</span></div>
+        <div class="stat"><span class="label">Gaps</span><span class="value yellow">2018, 2024, Michelle 2020-22</span></div>
+      </div>
+    </div>
+
+    <!-- PERSONAL PROJECTS -->
+    <div class="section">
+      <div class="section-title">🏠 Personal Projects</div>
+      
+      <div class="card personal">
+        <h3>Relocation Research <span class="badge research">Ongoing</span></h3>
+        <p>Evaluating move out of MN. Tax optimization is key factor.</p>
+        <div class="stat"><span class="label">Target Areas</span><span class="value">KY/TN, FL, MT</span></div>
+        <div class="stat"><span class="label">Primary</span><span class="value blue">Bowling Green</span></div>
+        <div class="stat"><span class="label">Tax Analysis</span><span class="value yellow">Pending</span></div>
+      </div>
+
+      <div class="card personal" style="margin-top: 15px;">
+        <h3>Digital Legacy <span class="badge research">Ongoing</span></h3>
+        <p>Voice cloning, video archiving, family data preservation.</p>
+        <div class="stat"><span class="label">Priority</span><span class="value red">High</span></div>
+        <div class="stat"><span class="label">Approach</span><span class="value">Zero-loss</span></div>
+      </div>
+
+      <div class="card personal" style="margin-top: 15px;">
+        <h3>3D Printing (Maker Lab) <span class="badge complete">Active</span></h3>
+        <p>Flashforge Adventurer 5M — belts, keychains, custom items.</p>
+        <div class="stat"><span class="label">Printer</span><span class="value green">Operational</span></div>
+        <div class="stat"><span class="label">Material</span><span class="value">PLA/high-speed</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARKING LOT -->
+  <div class="section">
+    <div class="section-title">🅿️ Parking Lot</div>
+    <div class="grid">
+      <div class="card parked">
+        <h3>TaxDome SMS Tab Integration <span class="badge parked">Blocked</span></h3>
+        <p>Native SMS in TaxDome Communications tab. Twilio-locked — no public API.</p>
+        <div class="stat"><span class="label">Alternative</span><span class="value">Custom SMS DB + TaxDome link</span></div>
+        <div class="stat"><span class="label">Blocker</span><span class="value yellow">RC API access</span></div>
+      </div>
+      <div class="card parked">
+        <h3>3D Printing Automation Pipeline <span class="badge parked">Parked</span></h3>
+        <p>Auto-discover STLs → slice → G-code. Blocked on Windows GUI automation for FlashPrint.</p>
+        <div class="stat"><span class="label">Alternative</span><span class="value">PrusaSlicer CLI</span></div>
+        <div class="stat"><span class="label">Added</span><span class="value">2026-03-03</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SYSTEM STATUS -->
+  <div class="section">
+    <div class="section-title">⚙️ System Status</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Session</h3>
+        <div class="stat"><span class="label">Model</span><span class="value blue">claude-opus-4-5</span></div>
+        <div class="stat"><span class="label">Version</span><span class="value">OpenClaw 2026.3.2</span></div>
+        <div class="stat"><span class="label">Channel</span><span class="value green">Telegram</span></div>
+      </div>
+      <div class="card">
+        <h3>Background Jobs</h3>
+        <div class="stat"><span class="label">File Reorg Batch</span><span class="value blue">Running</span></div>
+        <div class="stat"><span class="label">Session ID</span><span class="value">gentle-wharf</span></div>
+        <div class="stat"><span class="label">Est. Runtime</span><span class="value yellow">Several hours</span></div>
+      </div>
+      <div class="card">
+        <h3>APIs Configured</h3>
+        <div class="stat"><span class="label">Google Vision</span><span class="value green">Active ✓</span></div>
+        <div class="stat"><span class="label">Google Gemini</span><span class="value green">Active ✓</span></div>
+        <div class="stat"><span class="label">RingCentral</span><span class="value yellow">Pending access</span></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
